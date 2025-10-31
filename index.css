@@ -14,6 +14,7 @@
     --neon-deg: 360deg; /* border animation full circle */
   }
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -59,7 +60,7 @@ header p {
     conic-gradient(from var(--neon-deg), var(--gradient-neon)) border-box; /* background gradient & border gradient */
   animation: neon 10s infinite; /* border animation */
 }
-/* profile picture eye movement: */
+/* profile picture eye effect: */
 #anchor {
   width: 150px;
   position: relative;
@@ -111,6 +112,7 @@ a:hover {
     fill: var(--blue);
   }
 }
+
 main {
   grid-area: main;
   display: flex;
@@ -195,7 +197,7 @@ main {
 .projects-card-btn {
   display: flex;
   gap: 10px;
-  /* max-width: 50%; */
+  max-width: 50%;
 }
 .projects-card-btn button {
   color: var(--grey);
