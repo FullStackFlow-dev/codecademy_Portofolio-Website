@@ -171,3 +171,63 @@ textarea {
   padding: 0.5rem;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 75rem /* 1200px */) {
+  .contact {
+    padding-top: 1rem;
+    padding-left: 12rem;
+    border-radius: 70vw 70vw 0vw 70vw;
+  }
+}
+
+@media only screen and (max-width: 64rem /* 1024px */) {
+  .socials {
+    gap: 3rem;
+  }
+  .socials a:hover::before {
+    transform: translateY(-55px) rotate(0deg);
+  }
+  .socials a:hover::after {
+    transform: translateY(-42px) rotate(0deg);
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 50rem /* 800px */) {
+  .socials {
+    font-size: 0.8rem;
+  }
+  .socials a {
+    width: 60px;
+    height: 60px;
+  }
+  .socials a svg {
+    height: 28px;
+  }
+  .contact {
+    padding-top: 2rem;
+    padding-left: 8rem;
+    border-radius: 70vw 70vw 70vw 0vw;
+  }
+}
+
+@media only screen and (max-width: 44rem /* 704px */) {
+  .socials a {
+    width: 54px;
+    height: 54px;
+  }
+  .socials a svg {
+    height: 22px;
+  }
+  .socials a::before {
+    content: none;
+  }
+  .contact {
+    padding-top: 2rem;
+    padding-left: 6rem;
+    border-radius: 70vw 70vw 70vw 0vw;
+  }
+}
