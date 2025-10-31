@@ -1,6 +1,18 @@
 :root {
   --grey: rgb(202, 202, 197);
   --blue: rgb(59, 98, 190);
+  --gradient-neon: blue, red, purple, green, blue; /* border gradient */
+  --gradient-blue: rgb(15, 15, 47), rgb(4, 25, 91);
+}
+@property --neon-deg {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg; /* border animation start degree */
+}
+@keyframes neon {
+  100% {
+    --neon-deg: 360deg; /* border animation full circle */
+  }
 }
 * {
   margin: 0;
@@ -79,4 +91,145 @@ a:hover {
   svg {
     fill: var(--blue);
   }
+}
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#about {
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#about,
+#projects,
+#skills {
+  padding: 3rem 1rem;
+}
+#projects h2,
+#skills h2 {
+  margin-bottom: 1.5rem;
+}
+.my-projects,
+.my-skills {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 3rem 1.5rem;
+  justify-items: center;
+}
+.my-projects {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+.projects-card {
+  position: relative;
+  width: 350px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--gradient-blue)) padding-box,
+    conic-gradient(from var(--neon-deg), var(--gradient-neon)) border-box;
+  animation: neon 10s infinite;
+}
+.projects-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.projects-card-body {
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  position: absolute;
+  background: #1f3d4738;
+  -webkit-backdrop-filter: blur(10px); /* Safari */
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 2s;
+}
+.project-2,
+.project-3,
+.project-4 {
+  color: #000;
+  font-weight: 700;
+}
+.projects-card:hover .projects-card-body {
+  top: 0;
+}
+.projects-card-subtitle {
+  margin-bottom: 10px;
+  font-size: 0.7rem;
+}
+.projects-card-info {
+  margin: 10px 0;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+.projects-card-btn {
+  display: flex;
+  gap: 10px;
+  /* max-width: 50%; */
+}
+.projects-card-btn button {
+  color: var(--grey);
+  background: var(--blue);
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.my-skills {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.skills-card {
+  width: 200px;
+  height: 250px;
+  background-color: transparent;
+  perspective: 1000px;
+}
+.skills-card-flip {
+  position: relative;
+  transition: transform 0.9s; /* Smooth transition for the flip */
+  transform-style: preserve-3d; /* Allows 3D transforms to work */
+}
+.skills-card:hover .skills-card-flip {
+  transform: rotateY(180deg);
+}
+.skills-card-front,
+.skills-card-back {
+  position: absolute;
+  width: 200px;
+  min-height: 250px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 2rem;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  animation: neon 10s infinite;
+}
+.skills-card-front {
+  background: linear-gradient(var(--gradient-blue)) padding-box,
+    conic-gradient(from var(--neon-deg), var(--gradient-neon)) border-box;
+  text-align: center;
+}
+.skills-card-back {
+  background: linear-gradient(rgb(15, 15, 47), rgb(23, 23, 75)) padding-box,
+    conic-gradient(from var(--neon-deg), var(--gradient-neon)) border-box;
+  transform: rotateY(180deg);
+  font-family: "Courier New", Courier, monospace;
+}
+.skills-card li {
+  list-style: inside square;
 }
