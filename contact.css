@@ -37,8 +37,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: 0.5rem;
   font-family: "Genos", sans-serif;
   color: rgb(152, 149, 149);
 }
@@ -62,8 +61,9 @@ header button {
 main {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  align-items: center;
   gap: 1rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .socials {
   display: flex;
