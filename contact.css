@@ -233,7 +233,7 @@ textarea {
 }
 @media only screen and (max-width: 38rem /* 608px */) {
   body {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
   header button span {
     display: none;
